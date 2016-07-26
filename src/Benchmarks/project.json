@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "Dapper": "1.50.0-*",
+    "Npgsql" : "3.1.6-*",
+    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1-*",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0-*",
     "Microsoft.EntityFrameworkCore.Design": {
       "type": "build",

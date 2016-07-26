@@ -22,7 +22,14 @@ namespace Benchmarks.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_appSettings.ConnectionString);
+            if(_appSettings.Database == "postgresql")
+            {
+                optionsBuilder.UseNpgsql(_appSettings.ConnectionString);
+            }
+            else
+            {
+                optionsBuilder.UseSqlServer(_appSettings.ConnectionString);
+            }
         }
     }
 }
