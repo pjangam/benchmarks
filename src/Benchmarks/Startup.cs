@@ -55,7 +55,8 @@ namespace Benchmarks
 
             if (Scenarios.Any("Raw") || Scenarios.Any("Dapper"))
             {
-                if(Configuration["database"].ToLower() == "postgresql")
+                var database = Configuration["database"] ?? "sqlserver";
+                if(database.ToLower() == "postgresql")
                 {
                     services.AddSingleton<DbProviderFactory>(NpgsqlFactory.Instance);
                 }
